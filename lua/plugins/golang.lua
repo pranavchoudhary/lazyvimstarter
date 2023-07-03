@@ -8,7 +8,9 @@ return {
     },
     ft = { "go", "gomod" },
     config = function()
-      require("go").setup()
+      require("go").setup({
+        max_line_len = 128,
+      })
     end,
     build = ':lua require("go.install").update_all_sync()',
     event = { "CmdlineEnter" },
